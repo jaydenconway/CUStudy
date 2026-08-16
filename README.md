@@ -33,7 +33,7 @@ com.google.code.gson:gson:2.11.0
 ## Usage
 Run the checker from the project root, so that `rooms.txt` can be found:
 ```bash
-java LibraryChecker
+java CUStudy
 ```
 
 ## Notes
