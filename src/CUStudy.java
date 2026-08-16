@@ -12,7 +12,7 @@ import java.util.*;
 
 import static java.net.http.HttpClient.newHttpClient;
 
-class LibraryChecker {
+class CUStudy {
 
     static final DateTimeFormatter HOUR_12H = DateTimeFormatter.ofPattern("ha", Locale.ENGLISH);
     static final LocalTime DAY_START = LocalTime.of(9, 0);
