@@ -16,7 +16,7 @@ Floors 3 and 5 are silent floors. Floors 2 and 4 allow conversation.
 
 ## Requirements
 - `Java 17` or higher.
-- `Maven` for building. Gson is downloaded automatically.
+- `Maven` — [install instructions](https://maven.apache.org/install.html). Gson downloads automatically.
 
 ## Installation
 1. Clone the repository:
