@@ -1,44 +1,46 @@
 # CUStudy v0.1.0
 
 ## Description
-A command-line tool for checking study room availability at Carleton University's MacOdrum Library. It pulls live availability from the library's booking system and prints which rooms are free and when, so you can see the whole day at once instead of scanning the booking grid room by room. Room names and capacities are stored locally in a plain text file.
+A command-line tool for checking study room availability at Carleton University's MacOdrum Library. It pulls live availability from the library's booking system and draws the whole day as a timeline, so you can see which rooms are open when without scrolling through the booking grid one room at a time.
 
 ## Features
-- Fetch live room availability for the current day.
-- Group time slots by room and display them with real room numbers.
-- Room capacities included so you can match a room to your group size.
-- Silent floors (3 and 5) and conversational floors (2 and 4) distinguished by room number.
-- (Planned) Collapse time slots into readable ranges, e.g. `09:00-13:00, 15:00-18:30`.
+- Live room availability pulled straight from the library's booking system.
+- Timeline view of the full day, one row per room.
+- Real room numbers and capacities, not internal IDs.
+- Rooms sorted by number, grouped in blocks of five for readability.
 - (Planned) Filter by minimum block length, capacity, and floor type.
-- (Planned) Visual timeline bars showing a room's full day at a glance.
+- (Planned) Watch mode that alerts when a room opens up.
+- (Planned) Direct booking links for each room.
+
+Floors 3 and 5 are silent floors. Floors 2 and 4 allow conversation.
 
 ## Requirements
 - `Java 17` or higher.
-- `Gson` for JSON parsing.
+- `Maven` for building. Gson is downloaded automatically.
 
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/jaydenconway/custudy.git
+git clone https://github.com/jaydenconway/CUStudy.git
 ```
 2. Navigate to the project directory:
 ```bash
-cd custudy
+cd CUStudy
 ```
-3. Add Gson to your classpath. In IntelliJ: File > Project Structure > Libraries > + > From Maven, then enter:
-```
-com.google.code.gson:gson:2.11.0
+3. Build the jar:
+```bash
+mvn package
 ```
 
 ## Usage
-Run the checker from the project root, so that `rooms.txt` can be found:
+Run from the project root so that `rooms.txt` can be found:
 ```bash
-java CUStudy
+java -jar target/custudy.jar
 ```
 
 ## Notes
 CUStudy only reads availability. It does not book rooms — book through the library at https://carletonu.libcal.com
 
-Room data in `rooms.txt` was collected by hand and may be out of date.
+Room numbers and capacities in `rooms.txt` were collected by hand and may be out of date.
 
 Not affiliated with Carleton University or MacOdrum Library.
